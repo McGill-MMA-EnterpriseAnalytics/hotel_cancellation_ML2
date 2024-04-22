@@ -28,7 +28,7 @@ def create_upload_file(file: UploadFile = File(...)):
     
 @app.post("/predict_single/")
 def predict_single(data: BookingInput):
-    input_df = pd.DataFrame([data.dict()])
+    input_df = pd.DataFrame([data.model_dump()])
     try:
         probabilities = loaded_model.predict_proba(input_df)
         cancellation_probability = probabilities[:, 1]
