@@ -1,1 +1,8 @@
-{"class": "lale.lib.lale.auto_pipeline._AutoPipelineImpl", "state": "trained", "operator": "AutoPipeline", "label": "AutoPipeline", "documentation_url": "https://lale.readthedocs.io/en/latest/modules/lale.lib.lale.auto_pipeline.html", "hyperparams": {"scoring": "roc_auc", "max_opt_time": 200, "verbose": true, "max_evals": 5}, "is_frozen_trainable": true, "coefs": "coefs_not_available", "is_frozen_trained": false}
+{"class": "lale.lib.lale.auto_pipeline._AutoPipelineImpl", 
+  "state": "trained", "operator": "AutoPipeline", 
+  "label": "AutoPipeline", 
+  "documentation_url": "https://lale.readthedocs.io/en/latest/modules/lale.lib.lale.auto_pipeline.html", 
+  "hyperparams": {"scoring": "roc_auc", "max_opt_time": 200, "verbose": true, "max_evals": 5}, 
+  "is_frozen_trainable": true, 
+  "coefs": "coefs_not_available", 
+  "is_frozen_trained": false}
