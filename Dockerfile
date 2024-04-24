@@ -7,9 +7,9 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 #
-COPY ./country_transformer.py /code/
-COPY ./input_options.py /code/ 
-COPY ./baseline_model.pkl /code/ 
+COPY ./preprocessing.py /code/
+COPY ./bestModel_hpo.pkl /code/ 
+COPY ./bestModel_tpot.pkl /code/ 
 COPY ./fastapi_app.py /code/
 
 # 
