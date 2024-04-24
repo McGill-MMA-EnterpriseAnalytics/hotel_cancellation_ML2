@@ -52,16 +52,40 @@ preprocessor = ColumnTransformer(
     remainder='drop'
 )
 
-model = Pipeline(steps=[
+best_params_hpo = {'n_estimators': 200,
+                    'max_features': None,
+                    'min_samples_leaf': 1
+                    }
+
+best_params_tpot = {'bootstrap':True, 
+                    'criterion':"gini", 
+                    'max_features':0.5, 
+                    'min_samples_leaf':1, 
+                    'min_samples_split':19, 
+                    'n_estimators':100}
+
+model_hpo = Pipeline(steps=[
     ('country_transform', CountryTransformer(country_counts=country_counts)),
     ('preprocessor', preprocessor),  
-    ('classifier', RandomForestClassifier(random_state=42))
+    ('classifier', RandomForestClassifier(random_state=42, **best_params_hpo))
 ])
 
-# Fit the model
-X_train, X_test, y_train, y_test = train_test_split(df.drop('is_canceled', axis=1), df['is_canceled'], test_size=0.3, random_state=42)
+model_tpot = Pipeline(steps=[
+    ('country_transform', CountryTransformer(country_counts=country_counts)),
+    ('preprocessor', preprocessor),  
+    ('classifier', RandomForestClassifier(random_state=42, **best_params_tpot))
+])
 
-model.fit(X_train, y_train)
 
-with open('baseline_model.pkl', 'wb') as f:
-    pickle.dump({'country_counts': country_counts, 'model': model}, f)
+X = df.drop('is_canceled', axis=1)
+y = df['is_canceled']
+
+model_hpo.fit(X,y)
+model_tpot.fit(X,y)
+
+with open('bestModel_hpo.pkl', 'wb') as f:
+    pickle.dump({'country_counts': country_counts, 'model': model_hpo}, f)
+
+
+with open('bestModel_tpot.pkl', 'wb') as f:
+    pickle.dump({'country_counts': country_counts, 'model': model_tpot}, f)
