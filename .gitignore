@@ -1,4 +1,3 @@
 *.pkl
 __pycache__/
 fastapi_request_python.py
-gradio_app.py
