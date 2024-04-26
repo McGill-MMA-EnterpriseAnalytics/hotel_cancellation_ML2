@@ -1,0 +1,11 @@
+hotel,lead_time,arrival_date_month,arrival_date_week_number,arrival_date_day_of_month,stays_in_weekend_nights,stays_in_week_nights,adults,children,babies,meal,country,market_segment,distribution_channel,is_repeated_guest,previous_cancellations,previous_bookings_not_canceled,reserved_room_type,booking_changes,deposit_type,days_in_waiting_list,customer_type,adr,required_car_parking_spaces,total_of_special_requests
+Resort Hotel,203,December,49,2,2,5,2,0.0,0,BB,GBR,Direct,Direct,0,0,0,F,4,No Deposit,0,Transient,66.8,0,0
+City Hotel,82,July,29,16,0,3,2,0.0,0,BB,PRT,Online TA,TA/TO,0,0,0,A,0,No Deposit,0,Transient,76.5,0,0
+City Hotel,25,December,53,27,0,3,3,0.0,0,BB,BRA,Offline TA/TO,TA/TO,0,0,0,A,2,No Deposit,0,Transient-Party,60.0,0,1
+City Hotel,1,March,11,9,0,1,1,0.0,0,BB,SWE,Online TA,TA/TO,0,0,0,A,0,No Deposit,0,Transient-Party,95.0,0,0
+City Hotel,70,April,16,16,2,2,2,0.0,0,SC,GBR,Online TA,TA/TO,0,0,0,A,0,No Deposit,0,Transient,108.0,0,0
+City Hotel,170,April,17,27,0,3,2,0.0,0,BB,DEU,Online TA,TA/TO,0,0,0,D,0,No Deposit,0,Transient,130.5,0,0
+City Hotel,21,March,10,4,0,1,1,0.0,0,BB,SVN,Online TA,TA/TO,0,0,0,A,0,No Deposit,0,Transient-Party,85.0,0,0
+City Hotel,102,October,42,16,0,2,2,0.0,0,HB,DEU,Offline TA/TO,TA/TO,0,0,0,A,0,No Deposit,0,Transient-Party,109.0,0,0
+Resort Hotel,55,November,47,19,2,5,2,0.0,0,HB,GBR,Online TA,TA/TO,0,0,0,D,1,No Deposit,0,Transient,67.44,0,0
+Resort Hotel,222,September,38,14,1,1,2,0.0,0,HB,ESP,Groups,TA/TO,0,0,0,A,0,No Deposit,0,Transient,80.0,0,0
