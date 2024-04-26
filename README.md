@@ -12,7 +12,7 @@ Final Project for INSY695 EML-2
 * Reo Paul Jackson
 
 
-### Introduction
+## Introduction
 
 
 This project focuses on predicting hotel booking cancellations at the time of reservation. Our model assists hoteliers in forecasting the likelihood of cancellations, thereby optimizing revenue through dynamic pricing strategies, overbooking management, and targeted marketing efforts. The goal of this project is to enhance hotel revenue management and guest experience by providing reliable predictions on reservation cancellations. This allows for effective strategic decisions in pricing and booking policies.
