@@ -22,15 +22,20 @@ This project focuses on predicting hotel booking cancellations at the time of re
 To improve the model created in the first ML course, we employed several optimization techniques, such as Bayesian Optimization, TPE (Tree-structured Parzen Estimator), RandomizedSearchCV, and GridSearchCV. The fine-tuned parameters significantly improved the model's performance compared to the base model, increasing the ROC-AUC score from 86.47% to 94.12%.
 
 The parameters of our final model are:
-Algorithm: Random Forest
-max_features: None
-min_samples_leaf: 1
-n_estimators: 200
-ROC-AUC Score: 94.12% with manual tuning
+* Algorithm: Random Forest
+* max_features: None
+* min_samples_leaf: 1
+* n_estimators: 200
+* ROC-AUC Score: 94.12% with manual tuning
 
 
 ## AutoML
-
+On top of using manual hyperparameter tuning techniques, we also tested AutoML models to evaluate their scores in comparison to the base Random Forest from the previous project. The benefits of using AutoML is that is it more efficient than manual techniques, it is easily accessible to all, and that its results are easily reproduceable. The three libraries used were H2O.ai, TPOT, and Lale. In addition, three TPOT models were also tried. The results are as follows:
+* H20.ai and Lale performed slightly worse than our base model with ROC-AUC scores of 85.66% and 84.43% respectively.
+* All three TPOT models performed better than our base model but worse than the best tuned Random Forest, with the following scores:
+  * TPOT-nn: 92.84%
+  * TPOT-Light: 89.56%
+  * TPOT-MDR: 88.95%
 
 ## Deployment 
 The model is deployed using Docker containers locally and on the cloud via Databricks, ensuring flexibility and scalability. The Docker deployment process used started by pickling the final model into a pickle file. Next, FastAPI was used for creating prediction endpoints for both single and batch processing. A Gradio web application was created as a user interface to allow the user to make predictions on new inputs. Docker Image was used for files and dependencies, and Docker containers were used to then run the FastAPI & Gradio applications. 
