@@ -34,9 +34,20 @@ The model is deployed using Docker containers locally and on the cloud via Datab
 
 
 ### Model Fairness and Explainability
-For fairness, we evaluated the final model using FairML, ensuring decisions do not disproportionately impact specific groups. The results for the FairML audit can be found below. The results suggest that certain variable disproportionately impact the model to predict a cancellation (positive influences or red bars) or not (negative influences or blue bars). 
+For fairness, we evaluated the final model using FairML, ensuring decisions do not disproportionately impact specific groups. The results for the FairML audit can be found below. The results suggest that certain variable disproportionately impact the model to predict a cancellation (positive influences) or not (negative influences). The results included the following insights:
+* market_segment_Online TA (Online Travel Agent) has the highest positive influence, which means reservations made through online travel agents significantly increase the likelihood that the model predicts a cancellation 
+* lead_time has the highest negative influence, which means reservations made well in advance decrease the likelihood it predicts a cancellation
+* Not surprisingly, deposit_type_Non_Refund, or booked reservations with no deposit refunds, decrease the likelihood of a cancellation prediction
 
-For explainability, we utilized LIME to interpret the model's predictions. This provides insights into the results of the model, such understanding the chances that the model predicts a cancellation and the factors influencing the likelihood of cancellations.
+
+For explainability, we utilized LIME to interpret the model's predictions. This provides insights into the results of the model, such understanding the chances that the model predicts a cancellation and the factors influencing the likelihood of cancellations. The results included the following insights:
+* The model predicts that there's a 77% chance that the reservation will not be cancelled and a 23% chance that it will
+* The arrival month value of 0.59 suggests that the month of the arrival date contributes towards a higher chance of cancellation
+* Variables like children, babies and is_repeated_guest all have negative values, meaning they contribute to a lesser likelihood of cancellation
+
+
+### Model Drift
+We used two types of drift evaluation: adversarial drift and model drift using KSDrift. These drifts were evaluated using differences in train and test set predictions. In both types of drift evaluated, the drift evaluated was zero. This means the characteristics of the distributions evaluated are the same. 
 
 
 ### MLOps Best Practices Used
