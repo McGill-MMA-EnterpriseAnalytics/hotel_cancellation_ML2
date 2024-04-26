@@ -1,6 +1,6 @@
 ## Predicting Hotel Booking Cancellations
 
-Final Project for INSY695 EML-2
+Final Project for INSY695 Enterprise ML-2.
 
 
 **Group Members**
