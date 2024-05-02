@@ -36,6 +36,8 @@ On top of using manual hyperparameter tuning techniques, we also tested AutoML m
   * TPOT-nn: 92.84%
   * TPOT-Light: 89.56%
   * TPOT-MDR: 88.95%
+    
+<img width="472" alt="image" src="https://github.com/McGill-MMA-EnterpriseAnalytics/hotel_cancellation_ML2/assets/91162706/347cbc4f-abf3-4456-a522-c3bc509f15a1">
 
 ## Deployment 
 The model is deployed using Docker containers locally and on the cloud via Databricks, ensuring flexibility and scalability. The Docker deployment process used started by pickling the final model into a pickle file. Next, FastAPI was used for creating prediction endpoints for both single and batch processing. A Gradio web application was created as a user interface to allow the user to make predictions on new inputs. Docker Image was used for files and dependencies, and Docker containers were used to then run the FastAPI & Gradio applications. 
